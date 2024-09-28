@@ -2,6 +2,65 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## Common Xcode files and directories
+DerivedData/ (build-related files)
+*.xcuserdata/ (user-specific Xcode settings)
+*.xccheckout/ (checkout files)
+*.moved-aside/ (files moved aside during merge conflicts)
+*.mode1v3/ (Xcode project settings)
+*.mode2v3/ (Xcode project settings)
+*.perspectivev3/ (Xcode project settings)
+xcshareddata/ (shared Xcode data)
+
+## Build and DerivedData directories
+build/
+DerivedData/
+
+## CocoaPods and Carthage
+Pods/ (CocoaPods directory)
+Carthage/ (Carthage directory)
+
+## Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/sign&cert
+
+## Other
+.DS_Store 
+# (Mac OS X directory attribute)
+*.orig
+# (original files)
+.svn
+# (Subversion directories)
+*.swp
+# (Vim swap files)
+*.bak
+# (backup files)
+.idea/
+# (IntelliJ IDEA project settings) ???
+*.nib 
+# (XIB files)
+*.swiftpm/xcode/xcuserdata/
+# (Swiftpm user data)
+
+## Optional
+.env and .env.*
+# (environment variables)
+*.ipa
+# (iOS app archives)
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
 ## User settings
 xcuserdata/
 
@@ -20,14 +79,14 @@ playground.xcworkspace
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-# *.xcodeproj
+Packages/
+Package.pins
+Package.resolved
+*.xcodeproj
 #
 # Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
 # hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
+.swiftpm
 
 .build/
 
@@ -40,7 +99,7 @@ playground.xcworkspace
 # Pods/
 #
 # Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+*.xcworkspace
 
 # Carthage
 #
