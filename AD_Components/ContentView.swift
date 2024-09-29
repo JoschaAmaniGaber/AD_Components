@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        FloatingSheetScreen()
+        InteractiveFloatingButton()
+        
         Text("Tutorial by Kavsoft")
             .shadow(color: .purple, radius: 3)
             .bold()
