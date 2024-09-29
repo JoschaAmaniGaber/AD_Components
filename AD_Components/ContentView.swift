@@ -15,7 +15,7 @@ struct ContentView: View {
                 SplashScreen()
                     .transition(CustomSplashTransition3D(isRoot: false)) 
             } else {
-                InteractiveFloatingButton()
+                CoverCarousel()
                     .transition(CustomSplashTransition3D(isRoot: true))
             }
         }
