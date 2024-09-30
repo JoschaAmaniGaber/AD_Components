@@ -5,6 +5,8 @@
 //  Created by Joscha Amani Gaber on 25.09.24.
 //
 
+
+
 import SwiftUI
 
 struct ContentView: View {
@@ -24,9 +26,9 @@ struct ContentView: View {
         .ignoresSafeArea()
         .task {
             guard showSplashScreen else { return }
-            try? await Task.sleep(for: .seconds(0.8))
-            withAnimation(.smooth(duration: 0.8)) {
-                showSplashScreen = false
+            try? await Task.sleep(for: .seconds(1.8))
+            withAnimation(.smooth(duration: 2.8)) {
+                showSplashScreen = false 
             }
         }
     }

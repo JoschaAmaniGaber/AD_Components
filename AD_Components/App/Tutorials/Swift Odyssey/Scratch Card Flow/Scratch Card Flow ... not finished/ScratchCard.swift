@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-struct ScratchCardView: View {
+struct ScratchCard: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -17,5 +17,5 @@ struct ScratchCardView: View {
 }
 
 #Preview {
-    ScratchCardView()
+    ScratchCard()
 }

@@ -59,6 +59,7 @@ struct CustomSplashTransitionPullUp: Transition {
     }
 }
 
+// MARK: - Custom 3D Transitions possible
 struct CustomSplashTransition3D: Transition {
     var isRoot: Bool
     func body(content: Content, phase: TransitionPhase) -> some View {

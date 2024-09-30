@@ -6,18 +6,33 @@
 //
 
 /// Tutorial by Kavsoft: https://www.youtube.com/watch?v=xU5z4IJpVg4&t=9s
+/// for Image Model see Helpers
 import SwiftUI
 
 struct CoverCarousel: View {
     var body: some View {
         VStack {
+            Text("Tutorial by Kavsoft")
+                .bold()
+                .fontWidth(.expanded)
+                .shadow(color: .purple, radius: 8, y: 8)
+            Spacer()
             CustomCarousel(config: .init(hasOpacity: true, hasScale: true), selection: $activeID, data: images) { item in
                 Image(item.image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+                
             }
             .frame(height: 180)
+            Spacer()
+            Text("Amani Dunia Apps")
+                .font(.headline)
+                .bold()
+                .fontWidth(.expanded)
+                .shadow(color: .purple, radius: 8, y: 8)
+
         }
+//        .ignoresSafeArea()
         .navigationTitle("Cover Carousel")
     }
     @State private var activeID: UUID?
@@ -78,6 +93,7 @@ struct CustomCarousel<Content: View, Data: RandomAccessCollection>: View where D
                 .frame(width: resizedFrameWidth)
                 .opacity(config.hasOpacity ? 1 - opacityValue : 1)
                 .scaleEffect(config.hasScale ? 1 - scaleValue : 1)
+                .hueRotation(.degrees(scaleValue * 2222))
                 .mask({
                     let hasScale = config.hasScale
                     let scaledHeight = (1 - scaleValue) * size.height
@@ -106,17 +122,19 @@ struct CustomCarousel<Content: View, Data: RandomAccessCollection>: View where D
     }
 }
 
-#Preview {
-    NavigationStack {
-        CoverCarousel()
-    }
-}
-
 // MARK: - Model
 struct ImageModel : Identifiable {
     let id: UUID = .init()
     let image: String
 }
 
-var images: [ImageModel] = (1...22).compactMap {( ImageModel(image: "image\($0)" )) }
+var images: [ImageModel] = (45...71).compactMap {( ImageModel(image: "image\($0)" )) }
+
+
+
+#Preview {
+    NavigationStack {
+        CoverCarousel()
+    }
+}
 
