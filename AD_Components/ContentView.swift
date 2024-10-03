@@ -17,7 +17,7 @@ struct ContentView: View {
                 SplashScreen()
                     .transition(CustomSplashTransition3D(isRoot: false)) 
             } else {
-                CoverCarousel()
+                AutoScrollInfiniteCarousel()
                     .transition(CustomSplashTransition3D(isRoot: true))
             }
         }
