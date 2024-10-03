@@ -6,7 +6,6 @@
 //
 
 /// Tutorial by Kavsoft: https://www.youtube.com/watch?v=xU5z4IJpVg4&t=9s
-/// for Image Model see Helpers
 import SwiftUI
 
 struct CoverflowCarousel: View {

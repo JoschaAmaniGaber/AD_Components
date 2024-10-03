@@ -25,6 +25,7 @@ struct DC_115_TextTransition_BasicView: View {
             .buttonStyle(.borderedProminent)
             .controlSize(.extraLarge)
         }
+        .navigationTitle("Text Transition Basic")
     }
     
     // MARK: - Screen Variables
@@ -32,7 +33,9 @@ struct DC_115_TextTransition_BasicView: View {
 }
 
 #Preview {
-    DC_115_TextTransition_BasicView()
+    NavigationStack {
+        DC_115_TextTransition_BasicView()
+    }
 }
 
 struct DC_115_TextTransition_GraphicView: View {

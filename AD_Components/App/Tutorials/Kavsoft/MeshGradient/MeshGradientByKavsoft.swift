@@ -51,6 +51,7 @@ struct MeshGradientByKavsoft: View {
             }
         }
         .coordinateSpace(.named("MESH"))
+        .navigationTitle("Mesh Gradient Control")
     }
     
     // MARK: - View Properties

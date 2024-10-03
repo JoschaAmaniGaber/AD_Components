@@ -104,6 +104,7 @@ struct DC_112_MeshGradient: View {
             }
         }
         .ignoresSafeArea()
+        .navigationTitle("Mesh Gradient")
     }
     // MARK: - Screen Variables
     @State private var t: Float = 0.0
@@ -117,5 +118,7 @@ struct DC_112_MeshGradient: View {
 }
 
 #Preview {
-    DC_112_MeshGradient()
+    NavigationStack {
+        DC_112_MeshGradient()
+    }
 }

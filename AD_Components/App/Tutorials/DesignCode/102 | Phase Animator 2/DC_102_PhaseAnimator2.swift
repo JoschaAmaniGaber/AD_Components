@@ -29,9 +29,11 @@ struct DC_102_PhaseAnimator2: View {
                 } animation: { phase in
                     switch phase {
                     case 1: .bouncy(duration: 3, extraBounce: 0.3)
-                    case 2: .smooth(duration: 3, extraBounce: 0.5)
-                    case 3: .easeOut(duration: 3)
-                    default: .easeInOut
+                    case 2: .smooth(duration: 2, extraBounce: 0.5)
+                    case 3: .easeOut(duration: 1)
+                    case 4: .snappy(duration: 0.5)
+                    default:
+                            .linear(duration: 5)
                     }
                 }
                 .onTapGesture {
@@ -39,10 +41,13 @@ struct DC_102_PhaseAnimator2: View {
                 }
         }
         .padding()
+        .navigationTitle("Phase Animator 2")
     }
     @State var isTapped = false
 }
 
 #Preview {
-    DC_102_PhaseAnimator2()
+    NavigationStack {
+        DC_102_PhaseAnimator2()
+    }
 }

@@ -88,10 +88,10 @@ struct DC_121_HueRotation: View {
                     }
                 }
             }
-            .navigationTitle("Hue Rotation")
             .onAppear {
                 isShiftingColors.toggle()
             }
+            .navigationTitle("Scroll View with Hue Rotation")
         }
     }
     // MARK: - Screen only Variables
@@ -100,11 +100,12 @@ struct DC_121_HueRotation: View {
     @State private var isDragging: Bool = false
     @State private var isSwiping: Bool = false
     @State private var isShiftingColors: Bool = false
-    
 }
 
 #Preview {
     NavigationStack {
         DC_121_HueRotation()
+            .navigationBarTitleDisplayMode(.inline)
     }
+    
 }

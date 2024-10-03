@@ -6,7 +6,6 @@
 //
 
 /// Tutorial by Kavsoft: https://www.youtube.com/watch?v=hgNYPws1vE0
-
 import SwiftUI
 
 struct SplashScreenContentView: View {

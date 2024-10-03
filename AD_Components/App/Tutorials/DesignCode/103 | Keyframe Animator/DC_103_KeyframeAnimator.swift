@@ -37,9 +37,10 @@ struct DC_103_KeyframeAnimator: View {
                         CubicKeyframe(Angle(degrees: 1080), duration: 3)
                     }
                 }
-            .onTapGesture {
-                isTapped.toggle()
-            }
+                .onTapGesture {
+                    isTapped.toggle()
+                }
+                .navigationTitle("Keyframe Animator")
     }
     // MARK: - Screen Variables
     @State private var isTapped: Bool = false
@@ -52,5 +53,7 @@ struct DC_103_KeyframeAnimator: View {
 }
 
 #Preview {
-    DC_103_KeyframeAnimator()
+    NavigationStack {
+        DC_103_KeyframeAnimator()
+    }
 }

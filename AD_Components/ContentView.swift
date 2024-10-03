@@ -17,8 +17,10 @@ struct ContentView: View {
                 SplashScreen()
                     .transition(CustomSplashTransition3D(isRoot: false)) 
             } else {
-                AutoScrollInfiniteCarousel()
-                    .transition(CustomSplashTransition3D(isRoot: true))
+                NavigationStack {
+                    AllTutorials()  
+                }
+                .transition(CustomSplashTransition3D(isRoot: true))
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
