@@ -5,13 +5,19 @@
 //  Created by Joscha Amani Gaber on 02.10.24.
 //
 
+
 /// Tutorial by Kavsoft: https://www.youtube.com/watch?v=p1nN9eFOPNQ
 import SwiftUI
 
 struct AutoScrollInfiniteCarousel: View {
     var body: some View {
+
         VStack(spacing: 16) {
             AutoCustomCarousel(activeIndex: $activePage) {
+
+        VStack {
+            AutoCustomCarousel {
+
                 ForEach(mockItems) { mockItem in
                     RoundedRectangle(cornerRadius: 32)
                         .fill(mockItem.color.gradient)
@@ -19,6 +25,7 @@ struct AutoScrollInfiniteCarousel: View {
                 }
             }
             .frame(height: 224)
+
             
             // MARK: - CustomIndicators
             HStack(spacing: 8) {
@@ -32,12 +39,18 @@ struct AutoScrollInfiniteCarousel: View {
         .navigationTitle("Auto Scroll Carousel")
     }
     @State private var activePage: Int = 0
+
+        }
+        .navigationTitle("Auto Scroll Carousel")
+    }
+
 }
 
 #Preview {
     NavigationStack {
         AutoScrollInfiniteCarousel()
     }
+
 }
 // MARK: - AutoScrollCustomCaroussel
 struct AutoCustomCarousel<Content: View>: View {
@@ -52,10 +65,33 @@ struct AutoCustomCarousel<Content: View>: View {
                 ScrollView(.horizontal) {
                     HStack(spacing: 0) {
                         
+    
+}
+// MARK: - AutoScrollCustomCaroussel
+struct AutoCustomCarousel<Content: View>: View {
+    @ViewBuilder var content: Content
+    
+    var body: some View {
+        GeometryReader {
+            let size = $0.size
+            
+            ScrollView(.horizontal) {
+                HStack(spacing: 0) {
+                    Group(subviews: content) { collection in
+
                         if let lastItem = collection.last {
                             lastItem
                                 .frame(width: size.width, height: size.height)
                                 .id(-1)
+
+
+                                /// Magic going on here
+                                .onChange(of: isScrolling) { oldValue, newValue in
+                                    if newValue && scrollPosition == -1 {
+                                        scrollPosition = collection.count - 1
+                                    }
+                                }
+
                         }
                         
                         ForEach(collection.indices, id: \.self) { index in
@@ -68,6 +104,7 @@ struct AutoCustomCarousel<Content: View>: View {
                             firstItem
                                 .frame(width: size.width, height: size.height)
                                 .id(collection.count)
+
                         }
                     }
                     .scrollTargetLayout()
@@ -148,6 +185,31 @@ struct AutoCustomCarousel<Content: View>: View {
     @State private var isScrolling: Bool = false
     @State private var timer = Timer.publish(every: autoScrollDuration, on: .main, in: .default).autoconnect()
     @GestureState private var isHoldingScreen: Bool = false
+
+                                /// and Magic going on here
+                                .onChange(of: isScrolling) { oldValue, newValue in
+                                    if !newValue && scrollPosition == collection.count {
+                                        scrollPosition = 0
+                                    }
+                                }
+                        }
+                    }
+                }
+                .scrollTargetLayout()
+            }
+            .scrollPosition(id: $scrollPosition)
+            .scrollTargetBehavior(.paging)
+            .scrollIndicators(.hidden)
+            .onScrollPhaseChange({ oldPhase, newPhase in
+                isScrolling = newPhase.isScrolling
+            })
+            .onAppear { scrollPosition = 0}
+        }
+    }
+    // MARK: - View Variables
+    @State private var scrollPosition: Int?
+    @State private var isScrolling: Bool = false
+
 }
 
 // MARK: - SampleData
