@@ -6,7 +6,6 @@
 //
 
 /// Tutorial by Kavsoft: https://www.youtube.com/watch?v=Y5QnGWOsEmQ&t=115s
-
 import SwiftUI
 
 struct MeshGradientByKavsoft: View {
