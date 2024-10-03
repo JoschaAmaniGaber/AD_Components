@@ -62,7 +62,8 @@ enum WhoDidIt: String, CaseIterable, Identifiable {
             Text("Isomteric Animation")
                 .foregroundStyle(color.gradient)
             }
-        default : Text("Empty").foregroundStyle(color.gradient)
+//        default : Text("Empty").foregroundStyle(color.gradient)
+            
         }
     }
 }

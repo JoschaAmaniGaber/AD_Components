@@ -26,20 +26,29 @@ struct KavsoftsTutorials: View {
 
 enum Kavsoft: String, CaseIterable, Identifiable {
     var id: Self { self }
+    case animatedSideBar = "Animated Side Bar"
     case autoScroll = "Auto Scrolling Infinite Carousel"
     case coverflowCarousel = "Coverflow Carousel"
     case floatingBottomSheet = "Floating Bottom Sheet"
     case interactiveFloatingButton = "Interactive Floating Button"
     case meshGradient = "Mesh Gradient Control"
+
     
     @ViewBuilder
     var body: some View {
         switch self {
-        case .autoScroll: AutoScrollInfiniteCarousel()
-        case .coverflowCarousel: CoverflowCarousel()
-        case .floatingBottomSheet: FloatingSheetScreen()
-        case .interactiveFloatingButton: InteractiveFloatingButton()
-        case .meshGradient: MeshGradientByKavsoft()
+        case .autoScroll:
+            AutoScrollInfiniteCarousel()
+        case .coverflowCarousel:
+            CoverflowCarousel()
+        case .floatingBottomSheet:
+            FloatingSheetScreen()
+        case .interactiveFloatingButton:
+            InteractiveFloatingButton()
+        case .meshGradient:
+            MeshGradientByKavsoft()
+        case .animatedSideBar:
+            AnimatedSideBar()
         }
     }
 }

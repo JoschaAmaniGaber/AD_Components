@@ -36,7 +36,7 @@ struct ContentView: View {
     }
     
     /// Only needed when not using NavigationStack or TabView
-    var safeArea: UIEdgeInsets {
+    private var safeArea: UIEdgeInsets {
         if let safeArea = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.keyWindow?.safeAreaInsets {
             return safeArea
         }
