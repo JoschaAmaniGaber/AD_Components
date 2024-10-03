@@ -9,7 +9,7 @@
 /// for Image Model see Helpers
 import SwiftUI
 
-struct CoverCarousel: View {
+struct CoverflowCarousel: View {
     var body: some View {
         VStack {
             Text("Tutorial by Kavsoft")
@@ -134,7 +134,7 @@ var images: [ImageModel] = (45...71).compactMap {( ImageModel(image: "image\($0)
 
 #Preview {
     NavigationStack {
-        CoverCarousel()
+        CoverflowCarousel()
     }
 }
 
