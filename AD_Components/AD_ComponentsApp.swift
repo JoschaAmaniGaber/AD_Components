@@ -11,7 +11,7 @@ import SwiftUI
 struct AD_ComponentsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Home_AL()
                 .fontWidth(.expanded)
         }
     }

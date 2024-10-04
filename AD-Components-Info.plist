@@ -5,7 +5,9 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
-		<string>jGreen</string>
+		<string>iconBackground</string>
+		<key>UIImageName</key>
+		<string>AmaniDunia</string>
 	</dict>
 </dict>
 </plist>

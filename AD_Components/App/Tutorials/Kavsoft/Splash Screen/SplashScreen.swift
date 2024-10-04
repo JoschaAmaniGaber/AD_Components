@@ -89,8 +89,8 @@ struct SplashScreen: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(.jGreen)
-            Image("LogoIcon")
+                .fill(.iconBackground)
+            Image("AmaniDunia")
                 .resizable()
                 .scaledToFit()
         }
