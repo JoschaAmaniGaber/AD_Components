@@ -11,7 +11,7 @@ import SwiftUI
 struct AD_ComponentsApp: App {
     var body: some Scene {
         WindowGroup {
-            SuperPowerScrollViews()
+            ContentView()
                 .fontWidth(.expanded)
         }
     }
