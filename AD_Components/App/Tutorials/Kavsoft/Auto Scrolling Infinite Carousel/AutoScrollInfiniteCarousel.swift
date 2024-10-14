@@ -10,26 +10,28 @@ import SwiftUI
 
 struct AutoScrollInfiniteCarousel: View {
     var body: some View {
-        VStack(spacing: 16) {
-            AutoCustomCarousel(activeIndex: $activePage) {
-                ForEach(mockItems) { mockItem in
-                    RoundedRectangle(cornerRadius: 32)
-                        .fill(mockItem.color.gradient)
-                        .padding(.horizontal)
+        NavigationStack {
+            VStack(spacing: 16) {
+                AutoCustomCarousel(activeIndex: $activePage) {
+                    ForEach(mockItems) { mockItem in
+                        RoundedRectangle(cornerRadius: 32)
+                            .fill(mockItem.color.gradient)
+                            .padding(.horizontal)
+                    }
+                }
+                .frame(height: 224)
+                
+                // MARK: - CustomIndicators
+                HStack(spacing: 8) {
+                    ForEach(mockItems.indices, id: \.self) { index in
+                        Circle()
+                            .fill(activePage == index ? mockItems[index].color : .secondary)
+                            .frame(width: 8, height: 8)
+                    }
                 }
             }
-            .frame(height: 224)
-            
-            // MARK: - CustomIndicators
-            HStack(spacing: 8) {
-                ForEach(mockItems.indices, id: \.self) { index in
-                    Circle()
-                        .fill(activePage == index ? mockItems[index].color : .secondary)
-                        .frame(width: 8, height: 8)
-                }
-            }
+            .navigationTitle("Auto Scroll Carousel")
         }
-        .navigationTitle("Auto Scroll Carousel")
     }
     @State private var activePage: Int = 0
 }

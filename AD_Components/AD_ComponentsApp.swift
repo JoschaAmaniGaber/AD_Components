@@ -11,8 +11,8 @@ import SwiftUI
 struct AD_ComponentsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .fontWidth(.expanded)
+            PresentingScreen()
+            .fontWidth(.expanded)
         }
     }
 }

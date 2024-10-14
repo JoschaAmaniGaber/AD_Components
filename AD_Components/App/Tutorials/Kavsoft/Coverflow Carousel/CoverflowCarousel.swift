@@ -31,7 +31,6 @@ struct CoverflowCarousel: View {
                 .shadow(color: .purple, radius: 8, y: 8)
 
         }
-//        .ignoresSafeArea()
         .navigationTitle("Cover Carousel")
     }
     @State private var activeID: UUID?
